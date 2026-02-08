@@ -4,97 +4,109 @@
     <link rel="icon" type="image/x-icon" href="https://icons.getbootstrap.com/assets/img/favicons/favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+    <!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-
     <title>Main</title>
     <style>
-        body {
-            background-color: #f8f9fa;
-            padding-top: 20px;
-            padding-bottom: 50px;
-        }
-        .schedule-card {
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-            border-radius: 10px;
-            border: none;
-            margin-bottom: 20px;
-        }
-        .schedule-header {
-            background: linear-gradient(135deg, #3a7bd5, #00d2ff);
-            color: white;
-            border-radius: 10px 10px 0 0;
-            padding: 15px 20px;
-        }
-        .table th {
-            background-color: #e9ecef;
-            vertical-align: middle;
-            text-align: center;
-        }
-        .lesson-cell {
-            position: relative;
-            transition: all 0.2s ease;
-        }
-        .lesson-link {
-            color: #1a73e8;
-            text-decoration: none;
-            font-weight: 500;
-            text-align: center;
-            display: block;
-            padding: 8px 5px;
-            border-radius: 5px;
-            transition: all 0.2s;
-        }
-        .lesson-link:hover {
-            background-color: #e8f0fe;
-            text-align: center;
-            color: #174ea6;
-            text-decoration: none;
-        }
-        .time-cell {
-            background-color: #f8f9fa;
-            font-weight: 600;
-            text-align: center;
-            width: 90px;
-        }
-        .lesson-number {
-            background-color: #f8f9fa;
-            font-weight: 700;
-            text-align: center;
-            width: 50px;
-        }
-        .journal-links {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-        }
-        .class-header {
-            color: #3a7bd5;
-            border-bottom: 2px solid #3a7bd5;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-            margin-top: 25px;
-        }
-        .class-header:first-child {
-            margin-top: 0;
-        }
-        .journal-btn {
-            margin: 5px;
-            white-space: nowrap;
-        }
-        .table-hover tbody tr:hover {
-            background-color: rgba(58, 123, 213, 0.05);
-        }
-        @media (max-width: 768px) {
-            .table {
-                font-size: 0.875rem;
-            }
-            .lesson-link {
-                padding: 5px 3px;
-            }
-        }
+body {
+background-color: #f8f9fa;
+padding-top: 20px;
+padding-bottom: 50px;
+}
+.schedule-card {
+box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+border-radius: 10px;
+border: none;
+margin-bottom: 20px;
+}
+.schedule-header {
+background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+color: white;
+border-radius: 10px 10px 0 0;
+padding: 15px 20px;
+}
+.table th {
+background-color: #e9ecef;
+vertical-align: middle;
+text-align: center;
+}
+.lesson-cell {
+position: relative;
+transition: all 0.2s ease;
+}
+.lesson-link {
+color: #1a73e8;
+text-decoration: none;
+font-weight: 500;
+text-align: center;
+display: block;
+padding: 8px 5px;
+border-radius: 5px;
+transition: all 0.2s;
+}
+.lesson-link:hover {
+background-color: #e8f0fe;
+text-align: center;
+color: #174ea6;
+text-decoration: none;
+}
+.time-cell {
+background-color: #f8f9fa;
+font-weight: 600;
+text-align: center;
+width: 90px;
+}
+.lesson-number {
+background-color: #f8f9fa;
+font-weight: 700;
+text-align: center;
+width: 50px;
+}
+.journal-links {
+background: white;
+border-radius: 10px;
+padding: 20px;
+box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.class-header {
+color: #3a7bd5;
+border-bottom: 2px solid #3a7bd5;
+padding-bottom: 10px;
+margin-bottom: 15px;
+margin-top: 25px;
+}
+.class-header:first-child {
+margin-top: 0;
+}
+.journal-btn {
+margin: 5px;
+white-space: nowrap;
+}
+.table-hover tbody tr:hover {
+background-color: rgba(58, 123, 213, 0.05);
+}
+.ege-practicum {
+background-color: #f8fcf9  !important;
+
+}
+.ege-btn {
+background-color: #d4edda !important;
+border-color: #28a745 !important;
+}
+.ege-btn:hover {
+background-color: #218838 !important;
+border-color: #1e7e34 !important;
+}
+@media (max-width: 768px) {
+.table {
+font-size: 0.875rem;
+}
+.lesson-link {
+padding: 5px 3px;
+}
+}
+
     </style>
 </head>
 <body>
@@ -105,7 +117,6 @@
         <a class="btn btn-success" href="https://dnevnik.mos.ru/webteacher/account/schedule"
            target="_blank">schedule</a>
         <a class="btn btn-secondary" href="https://dnevnik.mos.ru/desktop" target="_blank">desktop</a>
-
         <a href="https://dnevnik.mos.ru/study_plan"
            class="btn btn-danger btn-lg" tabindex="-1" role="button" target="_blank">УП</a>
         <a href="https://dnevnik.mos.ru/study_plan/class_unit_curricula"
@@ -122,36 +133,30 @@
         <a class="btn btn-success"
            href="https://login.mos.ru/sps/login/logout?aupd=11&post_logout_redirect_uri=https%3A%2F%2Fschool.mos.ru%2F"
            target="_blank">logout</a>
-
     </nav>
     <div class="col-1 col-lg-2 mb-3">
-
-
     </div>
 </header>
-
 <!-- Begin page content -->
 <main role="main" class="container">
     <div class="container">
-
         <div class="row">
-
             <div class="col-12">
                 <h4>
                     <ul class="nav justify-content-top">
-
-            <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link" href="https://dnevnik.mos.ru/refs/_staff_list" target="_blank">Стафф</a>
                         </li>
                         <li class="nav-item">
-            <a href="https://myfreer.github.io/staff.html" class="badge text-bg-light"  target="_blank">Стафф</a><br>
-            </li>
+                            <a href="https://myfreer.github.io/staff.html" class="badge text-bg-light" target="_blank">Стафф</a><br>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="https://dnevnik.mos.ru/refs/students" target="_blank">Дети</a>
                         </li>
                         <li class="nav-item">
-            <a href="https://myfreer.github.io/students.html" class="badge text-bg-light"  target="_blank">Дети</a><br>
-            </li>
+                            <a href="https://myfreer.github.io/students.html" class="badge text-bg-light"
+                               target="_blank">Дети</a><br>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="https://dnevnik.mos.ru/study_plan/_students_to_groups"
                                target="_blank">Точки</a>
@@ -165,24 +170,18 @@
                                target="_blank">Журналы</a>
                         </li>
                         <li class="nav-item">
-            <a href="https://myfreer.github.io/up.html" class="badge text-bg-light" >УП</a><br>
-            </li>
+                            <a href="https://myfreer.github.io/up.html" class="badge text-bg-light">УП</a><br>
+                        </li>
                         <li class="nav-item">
-
                             <a class="btn btn-outline-primary btn-lg"
                                href="https://myfreer.github.io/groups.html">Groups</a>
                         </li>
-
                     </ul>
                 </h4>
             </div>
-
-
+        </div>
     </div>
-    </div>
-
-
-<div class="container">
+    <div class="container">
         <div class="row mb-4">
             <div class="col-12">
                 <div class="schedule-card card">
@@ -193,89 +192,149 @@
                         <div class="table-responsive">
                             <table class="table table-bordered table-hover">
                                 <thead>
-                                    <tr>
-                                        <th>№</th>
-                                        <th>Время</th>
-                                        <th>Пн</th>
-                                        <th>Вт</th>
-                                        <th>Ср</th>
-                                        <th>Чт</th>
-                                        <th>Пт</th>
-                                    </tr>
+                                <tr>
+                                    <th>№</th>
+                                    <th>Время</th>
+                                    <th>Пн</th>
+                                    <th>Вт</th>
+                                    <th>Ср</th>
+                                    <th>Чт</th>
+                                    <th>Пт</th>
+                                </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td class="lesson-number">1</td>
-                                        <td class="time-cell">08:30</td>
-                                        <td class="lesson-cell"></td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/12053758" class="lesson-link" target="_blank">ИНФ 11-Б</a></td>
-                                        <td class="lesson-cell"></td>
-                                        <td class="lesson-cell"></td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/12053760" class="lesson-link" target="_blank">ИНФ 11-В</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="lesson-number">2</td>
-                                        <td class="time-cell">09:30</td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/11800862" class="lesson-link" target="_blank">ИНФ 9-Б</a></td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/11812141" class="lesson-link" target="_blank">ИНФ 9-Д</a></td>
-                                        <td class="lesson-cell"></td>
-                                        <td class="lesson-cell"></td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/11962991" class="lesson-link" target="_blank">ПРГ 10-Б</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="lesson-number">3</td>
-                                        <td class="time-cell">10:30</td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/11983286" class="lesson-link" target="_blank">ИНФ 11-А</a></td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/11755681" class="lesson-link" target="_blank">ИНФ 7-Б</a></td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/11962979" class="lesson-link" target="_blank">ИНФ 10-Б</a></td>
-                                        <td class="lesson-cell"></td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/11772519" class="lesson-link" target="_blank">ИНФ 8-В</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="lesson-number">4</td>
-                                        <td class="time-cell">11:30</td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/11755706" class="lesson-link" target="_blank">ПРГ 7-В</a></td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/11772519" class="lesson-link" target="_blank">ИНФ 8-В</a></td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/12060472" class="lesson-link" target="_blank">ПРГ 11-Б</a></td>
-                                        <td class="lesson-cell"></td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/11962979" class="lesson-link" target="_blank">ИНФ 10-Б</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="lesson-number">5</td>
-                                        <td class="time-cell">12:35</td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/11750359" class="lesson-link" target="_blank">ИНФ 7-А</a></td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/11755767" class="lesson-link" target="_blank">ИНФ 7-Д</a></td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/11949984" class="lesson-link" target="_blank">ИНФ 10-А</a></td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/11755701" class="lesson-link" target="_blank">ИНФ 7-В</a></td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/11962979" class="lesson-link" target="_blank">ИНФ 10-Б</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="lesson-number">6</td>
-                                        <td class="time-cell">13:35</td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/11812147" class="lesson-link" target="_blank">ИНФ 8-Г</a></td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/12053758" class="lesson-link" target="_blank">ИНФ 11-Б</a></td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/11802346" class="lesson-link" target="_blank">ИНФ 9-В</a></td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/12053758" class="lesson-link" target="_blank">ИНФ 11-Б</a></td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/11755736" class="lesson-link" target="_blank">ИНФ 7-Г</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="lesson-number">7</td>
-                                        <td class="time-cell">14:35</td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/11802382" class="lesson-link" target="_blank">ИНФ 9-А</a></td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/11755701" class="lesson-link" target="_blank">ИНФ 7-В</a></td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/11962979" class="lesson-link" target="_blank">ИНФ 10-Б</a></td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/12053758" class="lesson-link" target="_blank">ИНФ 11-Б</a></td>
-                                        <td class="lesson-cell"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="lesson-number">8</td>
-                                        <td class="time-cell">15:30</td>
-                                        <td class="lesson-cell"><a href="https://school.mos.ru/teacher/study-process/journal/my/12060472" class="lesson-link" target="_blank">ПРГ 11-Б</a></td>
-                                        <td class="lesson-cell"></td>
-                                        <td class="lesson-cell"></td>
-                                        <td class="lesson-cell"></td>
-                                        <td class="lesson-cell"></td>
-                                    </tr>
+                                <tr>
+                                    <td class="lesson-number">1</td>
+                                    <td class="time-cell">08:30</td>
+                                    <td class="lesson-cell"></td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/11962979"
+                                            class="lesson-link" target="_blank">ИНФ 10-Б</a></td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/11755736"
+                                            class="lesson-link" target="_blank">ИНФ 7-Г</a></td>
+                                    <td class="lesson-cell"></td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/11755706"
+                                            class="lesson-link" target="_blank">ПРГ 7-В</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="lesson-number">2</td>
+                                    <td class="time-cell">09:30</td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/12053758"
+                                            class="lesson-link" target="_blank">ИНФ 11-Б</a></td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/12053758"
+                                            class="lesson-link" target="_blank">ИНФ 11-Б</a></td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/11802382"
+                                            class="lesson-link" target="_blank">ИНФ 9-А</a></td>
+                                    <td class="lesson-cell"></td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/11750359"
+                                            class="lesson-link" target="_blank">ИНФ 7-А</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="lesson-number">3</td>
+                                    <td class="time-cell">10:30</td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/11962991"
+                                            class="lesson-link" target="_blank">ПРГ 10-Б</a></td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/11962979"
+                                            class="lesson-link" target="_blank">ИНФ 10-Б</a></td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/11812147"
+                                            class="lesson-link" target="_blank">ИНФ 8-Г</a></td>
+                                    <td class="lesson-cell"></td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/11962979"
+                                            class="lesson-link" target="_blank">ИНФ 10-Б</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="lesson-number">4</td>
+                                    <td class="time-cell">11:30</td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/11755701"
+                                            class="lesson-link" target="_blank">ИНФ 7-В</a></td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/12454269"
+                                            class="lesson-link ege-practicum" target="_blank">ЕГЭ 11-АБ</a></td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/12060472"
+                                            class="lesson-link" target="_blank">ПРГ 11-Б</a></td>
+                                    <td class="lesson-cell"></td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/12466399"
+                                            class="lesson-link ege-practicum" target="_blank">ЕГЭ все</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="lesson-number">5</td>
+                                    <td class="time-cell">12:35</td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/12053758"
+                                            class="lesson-link" target="_blank">ИНФ 11-Б</a></td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/12454072"
+                                            class="lesson-link ege-practicum" target="_blank">ЕГЭ 11-АВ</a></td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/11949984"
+                                            class="lesson-link" target="_blank">ИНФ 10-А</a></td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/11802346"
+                                            class="lesson-link" target="_blank">ИНФ 9-В</a></td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/11962979"
+                                            class="lesson-link" target="_blank">ИНФ 10-Б</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="lesson-number">6</td>
+                                    <td class="time-cell">13:35</td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/12060472"
+                                            class="lesson-link" target="_blank">ПРГ 11-Б</a></td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/12451181"
+                                            class="lesson-link ege-practicum" target="_blank">ЕГЭ 11-А</a></td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/12053758"
+                                            class="lesson-link" target="_blank">ИНФ 11-Б</a></td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/11755701"
+                                            class="lesson-link" target="_blank">ИНФ 7-В</a></td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/11755681"
+                                            class="lesson-link" target="_blank">ИНФ 7-Б</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="lesson-number">7</td>
+                                    <td class="time-cell">14:35</td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/11812141"
+                                            class="lesson-link" target="_blank">ИНФ 9-Д</a></td>
+                                    <td class="lesson-cell"></td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/11755767"
+                                            class="lesson-link" target="_blank">ИНФ 7-Д</a></td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/11800862"
+                                            class="lesson-link" target="_blank">ИНФ 9-Б</a></td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/11772519"
+                                            class="lesson-link" target="_blank">ИНФ 8-В</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="lesson-number">8</td>
+                                    <td class="time-cell">15:30</td>
+                                    <td class="lesson-cell"><a
+                                            href="https://school.mos.ru/teacher/study-process/journal/my/11772519"
+                                            class="lesson-link" target="_blank">ИНФ 8-В</a></td>
+                                    <td class="lesson-cell"></td>
+                                    <td class="lesson-cell"></td>
+                                    <td class="lesson-cell"></td>
+                                    <td class="lesson-cell"></td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -283,57 +342,71 @@
                 </div>
             </div>
         </div>
-
         <div class="row">
             <div class="col-12">
                 <div class="journal-links">
                     <h3 class="class-header"><i class="bi bi-journal-bookmark"></i> 7 класс</h3>
                     <div class="d-flex flex-wrap">
-                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11750359" class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 7-А</a>
-                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11755681" class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 7-Б</a>
-                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11755701" class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 7-В</a>
-                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11755706" class="btn btn-outline-success journal-btn" target="_blank">ПРГ 7-В</a>
-                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11755736" class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 7-Г</a>
-                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11755767" class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 7-Д</a>
-
+                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11750359"
+                           class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 7-А</a>
+                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11755681"
+                           class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 7-Б</a>
+                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11755701"
+                           class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 7-В</a>
+                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11755706"
+                           class="btn btn-outline-success journal-btn" target="_blank">ПРГ 7-В</a>
+                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11755736"
+                           class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 7-Г</a>
+                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11755767"
+                           class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 7-Д</a>
                     </div>
-
                     <h3 class="class-header"><i class="bi bi-journal-bookmark"></i> 8 класс</h3>
                     <div class="d-flex flex-wrap">
-                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11772519" class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 8-В</a>
-                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11812147" class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 8-Г</a>
+                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11772519"
+                           class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 8-В</a>
+                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11812147"
+                           class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 8-Г</a>
                     </div>
-
                     <h3 class="class-header"><i class="bi bi-journal-bookmark"></i> 9 класс</h3>
                     <div class="d-flex flex-wrap">
-                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11802382" class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 9-А</a>
-                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11800862" class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 9-Б</a>
-                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11802346" class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 9-В</a>
-                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11812141" class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 9-Д</a>
+                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11802382"
+                           class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 9-А</a>
+                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11800862"
+                           class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 9-Б</a>
+                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11802346"
+                           class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 9-В</a>
+                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11812141"
+                           class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 9-Д</a>
                     </div>
-
                     <h3 class="class-header"><i class="bi bi-journal-bookmark"></i> 10 класс</h3>
                     <div class="d-flex flex-wrap">
-                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11949984" class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 10-А</a>
-                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11962979" class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 10-Б</a>
-                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11962991" class="btn btn-outline-success journal-btn" target="_blank">ПРГ 10-Б</a>
+                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11949984"
+                           class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 10-А</a>
+                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11962979"
+                           class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 10-Б</a>
+                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11962991"
+                           class="btn btn-outline-success journal-btn" target="_blank">ПРГ 10-Б</a>
                     </div>
-
                     <h3 class="class-header"><i class="bi bi-journal-bookmark"></i> 11 класс</h3>
                     <div class="d-flex flex-wrap">
-                        <a href="https://school.mos.ru/teacher/study-process/journal/my/11983286" class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 11-А</a>
-                        <a href="https://school.mos.ru/teacher/study-process/journal/my/12053758" class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 11-Б</a>
-                        <a href="https://school.mos.ru/teacher/study-process/journal/my/12060472" class="btn btn-outline-success journal-btn" target="_blank">ПРГ 11-Б</a>
-                        <a href="https://school.mos.ru/teacher/study-process/journal/my/12053760" class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 11-В</a>
-
+                        <a href="https://school.mos.ru/teacher/study-process/journal/my/12053758"
+                           class="btn btn-outline-primary journal-btn" target="_blank">ИНФ 11-Б</a>
+                        <a href="https://school.mos.ru/teacher/study-process/journal/my/12060472"
+                           class="btn btn-outline-success journal-btn" target="_blank">ПРГ 11-Б</a>
+                        <a href="https://school.mos.ru/teacher/study-process/journal/my/12454269"
+                           class="btn btn-outline-success ege-btn journal-btn" target="_blank">ЕГЭ 11-АБ</a>
+                        <a href="https://school.mos.ru/teacher/study-process/journal/my/12454072"
+                           class="btn btn-outline-success ege-btn journal-btn" target="_blank">ЕГЭ 11-АВ</a>
+                        <a href="https://school.mos.ru/teacher/study-process/journal/my/12451181"
+                           class="btn btn-outline-success ege-btn journal-btn" target="_blank">ЕГЭ 11-А</a>
+                        <a href="https://school.mos.ru/teacher/study-process/journal/my/12466399"
+                           class="btn btn-outline-success ege-btn journal-btn" target="_blank">ЕГЭ все</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </main>
 </body>
 <!-- FOOTER.begin -->
@@ -361,15 +434,12 @@
             <div class="col-6 col-lg-2 offset-lg-1 mb-3">
                 <h5>Админ</h5>
                 <ul class="list-unstyled">
-
                     <li class="nav-link"><a href="https://dnevnik.mos.ru/manage/journals" target="_blank">Журналы</a>
                     </li>
-
                     <li class="nav-link"><a href="https://link.educom.ru/" target="_blank">link.educom</a></li>
                     <li class="nav-link"><a href="https://dnevnik.mos.ru/study_plan/scheduleteacher" target="_blank">Расписание</a>
                     </li>
                     <li class="nav-link"><a href="https://myfreer.github.io/groups.html">Groups</a></li>
-
                 </ul>
             </div>
             <div class="col-6 col-lg-2 offset-lg-1 mb-3">
@@ -377,34 +447,24 @@
                 <ul class="list-unstyled">
                     <li class="nav-link"><a href="https://dnevnik.mos.ru/refs/_staff_list" target="_blank">Стафф</a>
                     </li>
-
                     <li class="nav-link"><a href="https://dnevnik.mos.ru/admin/users" target="_blank">Имперс</a></li>
                     <li class="nav-link"><a href="https://dnevnik.mos.ru/refs/students" target="_blank">Дети</a>
                     </li>
                     <li class="nav-link"><a href="https://dnevnik.mos.ru/study_plan/_students_to_groups"
                                             target="_blank">Точки</a></li>
-
-
                 </ul>
             </div>
-
-
-
-        <div class="col-6 col-lg-2 mb-3">
-            <h5>МЭШ</h5>
-            <ul class="list-unstyled">
-
-                <li class="nav-link"><a href="https://uchebnik.mos.ru/main" target="_blank">Библиотека</a></li>
-                <li class="nav-link"><a href="https://uchebnik.mos.ru/favorites" target="_blank">Б.Избранное</a>
-                </li>
-                <li class="nav-link"><a href="https://uchebnik.mos.ru/material/app/263764?menuReferrer=favorites"
-                                        target="_blank">Б.Виртлаб</a></li>
-
-            </ul>
+            <div class="col-6 col-lg-2 mb-3">
+                <h5>МЭШ</h5>
+                <ul class="list-unstyled">
+                    <li class="nav-link"><a href="https://uchebnik.mos.ru/main" target="_blank">Библиотека</a></li>
+                    <li class="nav-link"><a href="https://uchebnik.mos.ru/favorites" target="_blank">Б.Избранное</a>
+                    </li>
+                    <li class="nav-link"><a href="https://uchebnik.mos.ru/material/app/263764?menuReferrer=favorites"
+                                            target="_blank">Б.Виртлаб</a></li>
+                </ul>
+            </div>
         </div>
-
-    </div>
     </div>
 </footer>
 </html>
-
