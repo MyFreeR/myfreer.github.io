@@ -4,370 +4,412 @@
     <link rel="icon" type="image/x-icon" href="https://icons.getbootstrap.com/assets/img/favicons/favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <title>Main</title>
+    <title>609 · Расписание</title>
 
     <style>
+        :root {
+            --accent: #2563eb;
+            --accent-dark: #1d4ed8;
+            --surface: #ffffff;
+            --surface-muted: #f1f5f9;
+            --border: #e2e8f0;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --radius: 14px;
+            --shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+            --shadow-hover: 0 8px 24px rgba(37, 99, 235, 0.14);
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 20px;
-            color: #333;
-            background-color: #f9f9f9;
+            background: #f6f8fb;
+            color: var(--text);
+            margin: 0;
+            padding: 24px 16px 0;
         }
-        nav {
-            margin-bottom: 25px;
-            padding: 10px 15px;
-            background: #fff;
-            border-radius: 6px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+        .navbar {
+            background: var(--surface) !important;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 14px 18px;
+            margin-bottom: 28px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
         }
-        nav a {
-            margin-right: 15px;
-            text-decoration: none;
-            color: #0066cc;
-            font-size: 14px;
+        .navbar h1 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 0 16px 0 0;
+            letter-spacing: 1px;
         }
-        nav a:hover {
-            text-decoration: underline;
+        .navbar .btn {
+            border-radius: 10px;
+            font-size: 0.85rem;
+            padding: 6px 14px;
+            font-weight: 500;
         }
+
         h2 {
-            color: #2c3e50;
-            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+            margin: 0 0 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        h2::before {
+            content: "";
+            width: 6px;
+            height: 24px;
+            background: var(--accent);
+            border-radius: 4px;
+        }
+
+        .top-links {
+            background: var(--surface);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 10px 14px;
+            margin-bottom: 28px;
+        }
+        .top-links .nav-link {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            padding: 6px 10px;
+            border-radius: 8px;
+            transition: 0.15s;
+        }
+        .top-links .nav-link:hover {
+            color: var(--accent);
+            background: var(--surface-muted);
+        }
+        .top-links .btn-outline-primary {
+            border-radius: 8px;
+            font-size: 0.85rem;
+        }
+
+        .schedule-card {
+            background: var(--surface);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-bottom: 40px;
         }
         table {
             border-collapse: collapse;
             width: 100%;
-            margin-bottom: 40px;
+            margin: 0;
             text-align: center;
-            background-color: #fff;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            border-radius: 6px;
-            overflow: hidden;
         }
         th, td {
-            border: 1px solid #e0e0e0;
             padding: 12px 8px;
             vertical-align: middle;
-            font-size: 16px;
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--border);
         }
-        th {
-            background-color: #f4f6f8;
+        thead th {
+            background: var(--surface-muted);
             font-weight: 600;
-            color: #555;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--border);
+        }
+        tbody tr:hover {
+            background: #fafcff;
         }
         td:first-child, td:nth-child(2) {
-            font-weight: bold;
-            background-color: #fafafa;
+            font-weight: 600;
+            color: var(--text-muted);
             width: 60px;
-            color: #666;
-        }
-        td {
-            line-height: 1.4;
+            font-size: 0.85rem;
+            background: #fbfcfe;
         }
         td a {
-            color: #0066cc;
-            text-decoration: none;
             display: block;
+            color: var(--accent);
+            text-decoration: none;
+            padding: 6px 4px;
+            border-radius: 8px;
+            font-weight: 500;
+            line-height: 1.3;
+            transition: 0.15s;
         }
         td a:hover {
-            text-decoration: underline;
-            color: #004c99;
+            background: rgba(37, 99, 235, 0.08);
+            color: var(--accent-dark);
         }
+
         h3 {
-            margin-top: 25px;
-            color: #2c3e50;
-            border-bottom: 2px solid #0066cc;
-            padding-bottom: 5px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text);
+            margin: 28px 0 12px;
+            padding-left: 10px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .class-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 0;
+            margin: 0 0 8px;
+            list-style: none;
+        }
+        .class-list li a {
             display: inline-block;
-        }
-        ul {
-            list-style-type: none;
-            padding: 15px 20px;
-            margin-top: 10px;
-            background: #fff;
-            border-radius: 6px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-        li {
-            margin-bottom: 10px;
-            font-size: 15px;
-        }
-        a {
+            padding: 7px 14px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            color: var(--text);
+            font-size: 0.88rem;
+            font-weight: 500;
             text-decoration: none;
-            color: #0066cc;
+            box-shadow: 0 1px 3px rgba(15,23,42,0.04);
+            transition: 0.15s;
         }
-        a:hover {
-            text-decoration: underline;
-            color: #004c99;
+        .class-list li a:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: #f0f6ff;
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-1px);
+        }
+
+        footer {
+            background: var(--surface);
+            border-radius: var(--radius) var(--radius) 0 0;
+            box-shadow: var(--shadow);
+            margin-top: 48px;
+            padding: 32px 0;
+        }
+        footer h5 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+        footer .list-unstyled li {
+            margin-bottom: 6px;
+        }
+        footer a {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            text-decoration: none;
+            transition: 0.15s;
+        }
+        footer a:hover {
+            color: var(--accent);
+        }
+        .footer-brand span {
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        @media (max-width: 576px) {
+            th, td { padding: 8px 4px; font-size: 0.8rem; }
+            .navbar h1 { font-size: 1.1rem; margin-right: 8px; }
         }
     </style>
-
 </head>
 <body>
+
 <header>
-    <nav class="navbar navbar-light bg-secondary">
+    <nav class="navbar">
         <h1>609</h1>
         <a class="btn btn-primary" href="https://school.mos.ru/educationmanagement/routing" target="_blank">NEW</a>
-        <a class="btn btn-success" href="https://dnevnik.mos.ru/webteacher/account/schedule"
-           target="_blank">schedule</a>
+        <a class="btn btn-success" href="https://school.mos.ru/teacher/account/schedule?aupd_current_role=9:9" target="_blank">schedule</a>
         <a class="btn btn-secondary" href="https://dnevnik.mos.ru/desktop" target="_blank">desktop</a>
-        <a href="https://school.mos.ru/educationmanagement/study-plan/list"
-           class="btn btn-danger btn-lg" tabindex="-1" role="button" target="_blank">УП</a>
-        <a href="https://school.mos.ru/educationmanagement/study-plan/add-student-to-plan"
-           class="btn btn-outline-dark" tabindex="-1" role="button" target="_blank">УП.класс</a>
-        <a href="https://dnevnik.mos.ru/study_plan/addstudenttoplan"
-           class="btn btn-outline-dark" tabindex="-1" role="button" target="_blank">УП.парал</a>
-        <a href="https://school.mos.ru/educationmanagement/study-plan/groups-subjects"
-           class="btn btn-outline-warning" tabindex="-1" role="button" target="_blank">метаГруппы</a>
-        <a href="https://school.mos.ru/educationmanagement/study-plan/teacher-to-group"
-           class="btn btn-outline-info" tabindex="-1" role="button" target="_blank">Нагрузка</a>
-        <a href="https://dnevnik.mos.ru/study_plan/replacements"
-           class="btn btn-outline-info" tabindex="-1" role="button" target="_blank">Замены</a>
+        <a href="https://school.mos.ru/educationmanagement/study-plan/list" class="btn btn-danger btn-lg" role="button" target="_blank">УП</a>
+        <a href="https://school.mos.ru/educationmanagement/study-plan/add-student-to-plan" class="btn btn-outline-dark" role="button" target="_blank">УП.класс</a>
+        <a href="https://dnevnik.mos.ru/study_plan/addstudenttoplan" class="btn btn-outline-dark" role="button" target="_blank">УП.парал</a>
+        <a href="https://school.mos.ru/educationmanagement/study-plan/groups-subjects" class="btn btn-outline-warning" role="button" target="_blank">метаГруппы</a>
+        <a href="https://school.mos.ru/educationmanagement/study-plan/teacher-to-group" class="btn btn-outline-info" role="button" target="_blank">Нагрузка</a>
+        <a href="https://dnevnik.mos.ru/study_plan/replacements" class="btn btn-outline-info" role="button" target="_blank">Замены</a>
         <a class="btn btn-primary" href="https://school.mos.ru/choice" target="_blank">choice</a>
-        <a class="btn btn-success"
-           href="https://login.mos.ru/sps/login/logout?aupd=11&post_logout_redirect_uri=https%3A%2F%2Fschool.mos.ru%2F"
-           target="_blank">logout</a>
+        <a class="btn btn-success" href="https://login.mos.ru/sps/login/logout?aupd=11&post_logout_redirect_uri=https%3A%2F%2Fschool.mos.ru%2F" target="_blank">logout</a>
     </nav>
-    <div class="col-1 col-lg-2 mb-3">
-    </div>
 </header>
-<!-- Begin page content -->
-<main role="main" class="container">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h4>
-                    <ul class="nav justify-content-top">
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://school.mos.ru/educationmanagement/handbook/staff/list" target="_blank">Стафф</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="https://myfreer.github.io/staff.html" class="badge text-bg-light" target="_blank">Стафф</a><br>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://school.mos.ru/educationmanagement/handbook/contingent/students" target="_blank">Дети</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="https://myfreer.github.io/students.html" class="badge text-bg-light"
-                               target="_blank">Дети</a><br>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://school.mos.ru/educationmanagement/study-plan/students-to-groups"
-                               target="_blank">Точки</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://dnevnik.mos.ru/study_plan/scheduleteacher"
-                               target="_blank">Р...</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://school.mos.ru/educationmanagement/calendar/schedule/by-classes"
-                               target="_blank">Расписание</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://dnevnik.mos.ru/manage/journals"
-                               target="_blank">Журналы</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="https://myfreer.github.io/up.html" class="badge text-bg-light">УП</a><br>
-                        </li>
-                        <li class="nav-item">
-                            <a class="btn btn-outline-primary"
-                               href="https://myfreer.github.io/groups.html">Groups</a>
-                        </li>
-                    </ul>
-                </h4>
-            </div>
-        </div>
+
+<main class="container">
+
+    <div class="top-links">
+        <ul class="nav justify-content-start flex-wrap">
+            <li class="nav-item"><a class="nav-link" href="https://school.mos.ru/educationmanagement/handbook/staff/list" target="_blank">Стафф</a></li>
+            <li class="nav-item"><a class="badge text-bg-light" href="https://myfreer.github.io/staff.html" target="_blank">Стафф</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://school.mos.ru/educationmanagement/handbook/contingent/students" target="_blank">Дети</a></li>
+            <li class="nav-item"><a class="badge text-bg-light" href="https://myfreer.github.io/students.html" target="_blank">Дети</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://school.mos.ru/educationmanagement/study-plan/students-to-groups" target="_blank">Точки</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://dnevnik.mos.ru/study_plan/scheduleteacher" target="_blank">Р...</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://school.mos.ru/educationmanagement/calendar/schedule/by-classes" target="_blank">Расписание</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://dnevnik.mos.ru/manage/journals" target="_blank">Журналы</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://myfreer.github.io/up.html">УП</a></li>
+            <li class="nav-item ps-1"><a class="btn btn-outline-primary" href="https://myfreer.github.io/groups.html">Groups</a></li>
+        </ul>
     </div>
 
     <h2>Прекрасное расписание</h2>
 
-    <table>
-        <thead>
-            <tr>
-                <th>№</th>
-                <th>Время</th>
-                <th>Пн</th>
-                <th>Вт</th>
-                <th>Ср</th>
-                <th>Чт</th>
-                <th>Пт</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>08:30–9:15</td>
-                <td></td>
-                <td></td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/13008545" target="_blank">8в<br>ИНФ</a></td>
-                <td></td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/13008545" target="_blank">8в<br>ИНФ</a></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>09:30–10:15</td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12947657" target="_blank">11Б(ИТ)<br>ИНФ</a></td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12947557" target="_blank">7г<br>ИНФ</a></td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12947558" target="_blank">7в<br>ИНФ</a></td>
-                <td></td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12929390" target="_blank">10Б(ИТ)<br>ИНФ</a></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>10:35–11:20</td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12947560" target="_blank">7а<br>ИНФ</a></td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12929382" target="_blank">10Б(ИТ)<br>ПРГ</a></td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12929317" target="_blank">7в<br>ПРГ</a></td>
-                <td></td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12947657" target="_blank">11Б(ИТ)<br>ИНФ</a></td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>11:30–12:15</td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12947558" target="_blank">7в<br>ИНФ</a></td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12929382" target="_blank">10Б(ИТ)<br>ПРГ</a></td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12929390" target="_blank">10Б(ИТ)<br>ИНФ</a></td>
-                <td></td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12947657" target="_blank">11Б(ИТ)<br>ИНФ</a></td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>12:35–13:20</td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12929317" target="_blank">7в<br>ПРГ</a></td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/13009777" target="_blank">9в<br>ИНФ</a></td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12929453" target="_blank">8д<br>ИНФ</a></td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/13009777" target="_blank">9в<br>ИНФ</a></td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12947556" target="_blank">7д<br>ИНФ</a></td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>13:40–14:25</td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/13007896" target="_blank">8г<br>ИНФ</a></td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12947657" target="_blank">11Б(ИТ)<br>ИНФ</a></td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/13007916" target="_blank">8е<br>ИНФ</a></td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/13006863" target="_blank">8б<br>ИНФ</a></td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12947650" target="_blank">11Б(ИТ)<br>ПРГ</a></td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>14:35–15:20</td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12929390" target="_blank">10Б(ИТ)<br>ИНФ</a></td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12929390" target="_blank">10Б(ИТ)<br>ИНФ</a></td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/13008536" target="_blank">8а<br>ИНФ</a></td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12947650" target="_blank">11Б(ИТ)<br>ПРГ</a></td>
-                <td><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12947559" target="_blank">7б<br>ИНФ</a></td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>15:30–16:15</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="schedule-card">
+        <table>
+            <thead>
+                <tr>
+                    <th>№</th><th>Время</th><th>Пн</th><th>Вт</th><th>Ср</th><th>Чт</th><th>Пт</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td><td>08:30–9:15</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/13008545?logon_source=teacher_account_schedule" target="_blank">8в<br>ИНФ</a></td>
+                    <td></td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/13008545?logon_source=teacher_account_schedule" target="_blank">8в<br>ИНФ</a></td>
+                </tr>
+                <tr>
+                    <td>2</td><td>09:35–10:20</td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/12947657?logon_source=teacher_account_schedule" target="_blank">11Б(ИТ)<br>ИНФ</a></td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/12947557?logon_source=teacher_account_schedule" target="_blank">7г<br>ИНФ</a></td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/12947558?logon_source=teacher_account_schedule" target="_blank">7в<br>ИНФ</a></td>
+                    <td></td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/12929390?logon_source=teacher_account_schedule" target="_blank">10Б(ИТ)<br>ИНФ</a></td>
+                </tr>
+                <tr>
+                    <td>3</td><td>10:40–11:25</td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/12947560?logon_source=teacher_account_schedule" target="_blank">7а<br>ИНФ</a></td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/12929382?logon_source=teacher_account_schedule" target="_blank">10Б(ИТ)<br>ПРГ</a></td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/12929317?logon_source=teacher_account_schedule" target="_blank">7в<br>ПРГ</a></td>
+                    <td></td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/12947657?logon_source=teacher_account_schedule" target="_blank">11Б(ИТ)<br>ИНФ</a></td>
+                </tr>
+                <tr>
+                    <td>4</td><td>11:35–12:20</td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/12947558?logon_source=teacher_account_schedule" target="_blank">7в<br>ИНФ</a></td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/12929382?logon_source=teacher_account_schedule" target="_blank">10Б(ИТ)<br>ПРГ</a></td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/12929390?logon_source=teacher_account_schedule" target="_blank">10Б(ИТ)<br>ИНФ</a></td>
+                    <td></td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/12947657?logon_source=teacher_account_schedule" target="_blank">11Б(ИТ)<br>ИНФ</a></td>
+                </tr>
+                <tr>
+                    <td>5</td><td>12:40–13:25</td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/12929317?logon_source=teacher_account_schedule" target="_blank">7в<br>ПРГ</a></td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/13009777?logon_source=teacher_account_schedule" target="_blank">9в<br>ИНФ</a></td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/12929453?logon_source=teacher_account_schedule" target="_blank">8д<br>ИНФ</a></td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/13009777?logon_source=teacher_account_schedule" target="_blank">9в<br>ИНФ</a></td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/12947556?logon_source=teacher_account_schedule" target="_blank">7д<br>ИНФ</a></td>
+                </tr>
+                <tr>
+                    <td>6</td><td>13:45–14:30</td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/13007896?logon_source=teacher_account_schedule" target="_blank">8г<br>ИНФ</a></td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/12947657?logon_source=teacher_account_schedule" target="_blank">11Б(ИТ)<br>ИНФ</a></td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/13007916?logon_source=teacher_account_schedule" target="_blank">8е<br>ИНФ</a></td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/13006863?logon_source=teacher_account_schedule" target="_blank">8б<br>ИНФ</a></td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/12947650?logon_source=teacher_account_schedule" target="_blank">11Б(ИТ)<br>ПРГ</a></td>
+                </tr>
+                <tr>
+                    <td>7</td><td>14:40–15:25</td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/12929390?logon_source=teacher_account_schedule" target="_blank">10Б(ИТ)<br>ИНФ</a></td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/12929390?logon_source=teacher_account_schedule" target="_blank">10Б(ИТ)<br>ИНФ</a></td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/13008536?logon_source=teacher_account_schedule" target="_blank">8а<br>ИНФ</a></td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/12947650?logon_source=teacher_account_schedule" target="_blank">11Б(ИТ)<br>ПРГ</a></td>
+                    <td><a href="https://school.mos.ru/teacher/study-process/journal/grade/12947559?logon_source=teacher_account_schedule" target="_blank">7б<br>ИНФ</a></td>
+                </tr>
+                <tr>
+                    <td>8</td><td>15:35–16:20</td>
+                    <td></td><td></td><td></td><td></td><td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <h3>7 класс</h3>
-    <ul>
-        <li><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12947560" target="_blank">ИНФ 7-А</a></li>
-        <li><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12947559" target="_blank">ИНФ 7-Б</a></li>
-        <li><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12929317" target="_blank">ПРГ 7-В</a></li>
-        <li><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12947558" target="_blank">ИНФ 7-В</a></li>
-        <li><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12947557" target="_blank">ИНФ 7-Г</a></li>
-        <li><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12947556" target="_blank">ИНФ 7-Д</a></li>
+    <ul class="class-list">
+        <li><a href="https://school.mos.ru/teacher/study-process/journal/grade/12947560?logon_source=teacher_account_schedule" target="_blank">ИНФ 7-А</a></li>
+        <li><a href="https://school.mos.ru/teacher/study-process/journal/grade/12947559?logon_source=teacher_account_schedule" target="_blank">ИНФ 7-Б</a></li>
+        <li><a href="https://school.mos.ru/teacher/study-process/journal/grade/12929317?logon_source=teacher_account_schedule" target="_blank">ПРГ 7-В</a></li>
+        <li><a href="https://school.mos.ru/teacher/study-process/journal/grade/12947558?logon_source=teacher_account_schedule" target="_blank">ИНФ 7-В</a></li>
+        <li><a href="https://school.mos.ru/teacher/study-process/journal/grade/12947557?logon_source=teacher_account_schedule" target="_blank">ИНФ 7-Г</a></li>
+        <li><a href="https://school.mos.ru/teacher/study-process/journal/grade/12947556?logon_source=teacher_account_schedule" target="_blank">ИНФ 7-Д</a></li>
     </ul>
 
     <h3>8 класс</h3>
-    <ul>
-        <li><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/13008536" target="_blank">ИНФ 8-А</a></li>
-        <li><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/13006863" target="_blank">ИНФ 8-Б</a></li>
-        <li><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/13008545" target="_blank">ИНФ 8-В</a></li>
-        <li><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/13007896" target="_blank">ИНФ 8-Г</a></li>
-        <li><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12929453" target="_blank">ИНФ 8-Д</a></li>
-        <li><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/13007916" target="_blank">ИНФ 8-Е</a></li>
+    <ul class="class-list">
+        <li><a href="https://school.mos.ru/teacher/study-process/journal/grade/13008536?logon_source=teacher_account_schedule" target="_blank">ИНФ 8-А</a></li>
+        <li><a href="https://school.mos.ru/teacher/study-process/journal/grade/13006863?logon_source=teacher_account_schedule" target="_blank">ИНФ 8-Б</a></li>
+        <li><a href="https://school.mos.ru/teacher/study-process/journal/grade/13008545?logon_source=teacher_account_schedule" target="_blank">ИНФ 8-В</a></li>
+        <li><a href="https://school.mos.ru/teacher/study-process/journal/grade/13007896?logon_source=teacher_account_schedule" target="_blank">ИНФ 8-Г</a></li>
+        <li><a href="https://school.mos.ru/teacher/study-process/journal/grade/12929453?logon_source=teacher_account_schedule" target="_blank">ИНФ 8-Д</a></li>
+        <li><a href="https://school.mos.ru/teacher/study-process/journal/grade/13007916?logon_source=teacher_account_schedule" target="_blank">ИНФ 8-Е</a></li>
     </ul>
 
     <h3>9 класс</h3>
-    <ul>
-        <li><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/13009777" target="_blank">ИНФ 9-В</a></li>
+    <ul class="class-list">
+        <li><a href="https://school.mos.ru/teacher/study-process/journal/grade/13009777?logon_source=teacher_account_schedule" target="_blank">ИНФ 9-В</a></li>
     </ul>
 
     <h3>10 класс</h3>
-    <ul>
-        <li><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12929390" target="_blank">ИНФ 10-Б</a></li>
-        <li><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12929382" target="_blank">ПРГ 10-Б</a></li>
+    <ul class="class-list">
+        <li><a href="https://school.mos.ru/teacher/study-process/journal/grade/12929390?logon_source=teacher_account_schedule" target="_blank">ИНФ 10-Б</a></li>
+        <li><a href="https://school.mos.ru/teacher/study-process/journal/grade/12929382?logon_source=teacher_account_schedule" target="_blank">ПРГ 10-Б</a></li>
     </ul>
 
     <h3>11 класс</h3>
-    <ul>
-        <li><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12947657" target="_blank">ИНФ 11-Б</a></li>
-        <li><a href="https://dnevnik.mos.ru/webteacher/study-process/journal/grade/12947650" target="_blank">ПРГ 11-Б</a></li>
+    <ul class="class-list">
+        <li><a href="https://school.mos.ru/teacher/study-process/journal/grade/12947657?logon_source=teacher_account_schedule" target="_blank">ИНФ 11-Б</a></li>
+        <li><a href="https://school.mos.ru/teacher/study-process/journal/grade/12947650?logon_source=teacher_account_schedule" target="_blank">ПРГ 11-Б</a></li>
     </ul>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </main>
-</body>
-<!-- FOOTER.begin -->
-<footer class="bd-footer py-4 py-md-5 mt-5 bg-light">
-    <div class="container py-4 py-md-5 px-4 px-md-3">
+
+<footer>
+    <div class="container">
         <div class="row">
             <div class="col-lg-3 mb-3">
-                <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none footer-brand"
-                   href="https://getbootstrap.com/" aria-label="Bootstrap">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="d-block me-2"
-                         viewBox="0 0 118 94" role="img"><title>Bootstrap</title>
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                              d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"
-                              fill="currentColor"/>
-                    </svg>
-                    <span class="fs-5">Bootstrap</span>
+                <a class="d-inline-flex align-items-center mb-2 footer-brand text-decoration-none" href="#" aria-label="609">
+                    <span class="fs-4">609</span>
                 </a>
-                <ul class="list-unstyled small text-muted">
-                    <li class="mb-2">Designed and built with all the love in the world by the <a
-                            href="/docs/5.2/about/team/">Bootstrap team</a> with the help of <a
-                            href="https://github.com/twbs/bootstrap/graphs/contributors">our contributors</a>.
-                    </li>
-                </ul>
+                <p class="small text-muted mb-0">Рабочая страница учителя. Все журналы и расписание — в одном месте.</p>
             </div>
             <div class="col-6 col-lg-2 offset-lg-1 mb-3">
                 <h5>Админ</h5>
                 <ul class="list-unstyled">
-                    <li class="nav-link"><a href="https://dnevnik.mos.ru/manage/journals" target="_blank">Журналы</a>
-                    </li>
-                    <li class="nav-link"><a href="https://link.educom.ru/" target="_blank">link.educom</a></li>
-                    <li class="nav-link"><a href="https://dnevnik.mos.ru/study_plan/scheduleteacher" target="_blank">Расписание</a>
-                    </li>
-                    <li class="nav-link"><a href="https://myfreer.github.io/groups.html">Groups</a></li>
+                    <li><a href="https://dnevnik.mos.ru/manage/journals" target="_blank">Журналы</a></li>
+                    <li><a href="https://link.educom.ru/" target="_blank">link.educom</a></li>
+                    <li><a href="https://dnevnik.mos.ru/study_plan/scheduleteacher" target="_blank">Расписание</a></li>
+                    <li><a href="https://myfreer.github.io/groups.html">Groups</a></li>
                 </ul>
             </div>
             <div class="col-6 col-lg-2 offset-lg-1 mb-3">
                 <h5>Люди</h5>
                 <ul class="list-unstyled">
-                    <li class="nav-link"><a href="https://school.mos.ru/educationmanagement/handbook/staff/list" target="_blank">Стафф</a>
-                    </li>
-                    <li class="nav-link"><a href="https://dnevnik.mos.ru/admin/users" target="_blank">Имперс</a></li>
-                    <li class="nav-link"><a href="https://school.mos.ru/educationmanagement/handbook/contingent/students" target="_blank">Дети</a>
-                    </li>
-                    <li class="nav-link"><a href="https://school.mos.ru/educationmanagement/study-plan/students-to-groups"
-                                            target="_blank">Точки</a></li>
+                    <li><a href="https://school.mos.ru/educationmanagement/handbook/staff/list" target="_blank">Стафф</a></li>
+                    <li><a href="https://dnevnik.mos.ru/admin/users" target="_blank">Имперс</a></li>
+                    <li><a href="https://school.mos.ru/educationmanagement/handbook/contingent/students" target="_blank">Дети</a></li>
+                    <li><a href="https://school.mos.ru/educationmanagement/study-plan/students-to-groups" target="_blank">Точки</a></li>
                 </ul>
             </div>
             <div class="col-6 col-lg-2 mb-3">
                 <h5>МЭШ</h5>
                 <ul class="list-unstyled">
-                    <li class="nav-link"><a href="https://uchebnik.mos.ru/main" target="_blank">Библиотека</a></li>
-                    <li class="nav-link"><a href="https://uchebnik.mos.ru/favorites" target="_blank">Б.Избранное</a>
-                    </li>
-                    <li class="nav-link"><a href="https://uchebnik.mos.ru/material/app/263764?menuReferrer=favorites"
-                                            target="_blank">Б.Виртлаб</a></li>
+                    <li><a href="https://uchebnik.mos.ru/main" target="_blank">Библиотека</a></li>
+                    <li><a href="https://uchebnik.mos.ru/favorites" target="_blank">Б.Избранное</a></li>
+                    <li><a href="https://uchebnik.mos.ru/material/app/263764?menuReferrer=favorites" target="_blank">Б.Виртлаб</a></li>
                 </ul>
             </div>
         </div>
     </div>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
